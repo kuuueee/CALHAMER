@@ -1,0 +1,50 @@
+[
+	{ 
+  	"country"       : "austria",
+  	"channel_id"    : "703676629540405268",
+  	"role_id"       : "704042338615427143",
+    "submission_id" : "704809521960190002"
+	},
+	{ 
+  	"country"       : "england",
+  	"channel_id"    : "703676661169782824",
+  	"role_id"       : "704042221682556979",
+    "submission_id" : "704809790735646730"
+	},
+	{ 
+  	"country"       : "france",
+  	"channel_id"    : "703676759404707921",
+  	"role_id"       : "704042694439206932",
+    "submission_id" : "704809909312553070"
+	},
+	{ 
+  	"country"       : "germany",
+  	"channel_id"    : "703676781303169149",
+  	"role_id"	      : "704042503250247760",
+    "submission_id" : "704809947111751740"
+	},
+	{ 
+  	"country"       : "italy",
+  	"channel_id"    : "703676802190671974",
+  	"role_id"	      : "704042803830980658",
+    "submission_id" : "704809996071731235"
+	},
+	{ 
+  	"country"       : "russia",
+  	"channel_id"    : "703676826152599652",
+  	"role_id"	      : "704042725762400317",
+    "submission_id" : "704810038472081489"
+	},
+	{ 
+  	"country"       : "turkey",
+  	"channel_id"    : "703676849494032464",
+  	"role_id"	      : "704042379753160724",
+    "submission_id" : "704810070000795681"
+	},
+  { 
+    "country"       : "world",
+    "channel_id"    : "704788597185839218",
+    "role_id"       : "704789502971084851",
+    "submission_id" : "null"
+  }
+]
