@@ -36,7 +36,7 @@ please send orders from your designated country channel.
 
 ### phase
 
-Description: Allows the game master to advance to the next season, or reset to the first season\n
+Description: Allows the game master to advance to the next season, or reset to the first season\
 Usage: !phase  season to advance submissions one season\
        !phase reset to reset the current season to Fall_1901
 
