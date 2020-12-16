@@ -2,10 +2,10 @@ Calhamer
 
 Token :
 
-NzAzNjgyNjAwNjk0MzE3MTk2.XqSJfQ.v07plgaBO60tu04HZfx4n-6HLC4
+ha, like you're getting my Token bucko
 
 Client ID:
 
-703682600694317196
+ha, like you're getting my Client ID bucko
 
 https://discordapp.com/api/oauth2/authorize?client_id=703682600694317196&permissions=0&scope=bot
