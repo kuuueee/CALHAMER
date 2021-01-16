@@ -34,7 +34,7 @@ Usage: !order {current time} {order that you want to submit}\
 Example: !order Fall-1901 Army Par -> Pic, Fleet Eng -> Iri, etc..\
 please send orders from your designated country channel.
 
-## beak
+### beak
 
 Aliases: trash-talk, insult, shit-talk\
 Description: Sends an anonymous message to the trash-talk channel.\
