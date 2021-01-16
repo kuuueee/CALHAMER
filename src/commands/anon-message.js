@@ -5,9 +5,14 @@ const prefix = config.prefix;
 module.exports = {
 	name: 'anon-message',
 	description: 'Sends an anonymous message to the country of the user\'s choosing',
-	//aliases: ['commands'],
+	aliases: ['message-anon','message_anon','anon_message'],
 	usage: '{country receiving message} {message}\n**Example:** '+prefix+'anon-message france if you support england this round, germany and austria will make an alliance.',
 	execute(message, args, client) {
+
+		//if the message came from a dm, exit out of the command without warning.
+		if (message.channel.type === 'dm') {
+			return;
+		}
 		const fs = require('fs')
 		fs.readFile('./json/country_id.json', 'utf8', (err, jsonString) => {
 		    if (err) {
@@ -23,6 +28,7 @@ module.exports = {
 		    		break;
 		    	}
 		    }
+		    args[0] = args[0].toLowerCase();
 		    if (!user_is_power){
 		    	//user is not a power
 		    	message.reply('you are not authorized to make this command.');
@@ -33,7 +39,7 @@ module.exports = {
 		    		message.reply('you may not send an anonymous message to yourself');
 		    	} else if ((args[0] == 'austria' || args[0] == 'england' || args[0] == 'france' || 
 		    			   args[0] == 'germany' || args[0] == 'italy' || args[0] == 'russia' || 
-		    			   args[0] == 'turkey'|| args[0] == 'world') && args[0] != user_country){
+		    			   args[0] == 'turkey') && args[0] != user_country){
 		    		//send an anonymous message to 
 			    	for (i = 0; i < country_id.length; i++){
 			    		if (country_id[i].country == args[0]){
@@ -50,10 +56,10 @@ module.exports = {
 			    	}
 					const channel = client.channels.cache.get(anon_message_channel);
 					channel.send(anon_message);
-					message.author.send();
+					message.author.send("Your message has been sent to " + args[0]);
 		    	} else {
 		    		message.reply('your command must include a valid country as the first argument'
-		    		+ '\nie. anon_message England attack at dawn');
+		    		+ '\nie. anon-message England attack at dawn');
 		    	}
 		    }
 		})
