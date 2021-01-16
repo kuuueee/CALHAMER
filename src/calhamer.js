@@ -23,11 +23,15 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
-	const command = args.shift().toLowerCase();
+	const commandName = args.shift().toLowerCase();
 
-	if (!client.commands.has(command)) return;
+	const command = client.commands.get(commandName)
+		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+
+	if (!command) return;
+
 	try {
-		client.commands.get(command).execute(message, args, client);
+		command.execute(message, args, client);
 	} catch (error) {
 		console.error(error);
 		message.reply('there was an error trying to execute command!');
@@ -35,16 +39,16 @@ client.on('message', message => {
 
 });
 
-//right now check to see if there is a submission every tuesday and thursday at 5pm
+//right now check to see if there is a submission every monday and wednesday at 11pm PST based on server in EST
 
-/*
 
-let scheduledReminder = new cron.CronJob('0 0 5 ? * TUE,THU *', () => {
+
+let scheduledReminder = new cron.CronJob('0 22 * * 1,3', () => {
 	reminder.remind_users(client); 
 });
 
 scheduledReminder.start()
 
-*/
+
 
 client.login(token);
