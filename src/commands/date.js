@@ -5,7 +5,7 @@ const prefix = config.prefix;
 module.exports = {
 	name: 'date',
 	description: 'returns the current date to the user',
-	aliases: ['time current-time'],
+	aliases: ['time','current-time'],
 	usage: ' ',
 	execute(message, args, client) {
 		const fs = require('fs')
