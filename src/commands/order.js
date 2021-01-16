@@ -8,6 +8,10 @@ module.exports = {
 	aliases: ['submit'],
 	usage: '{current time} {order that you want to submit}\n**Example:** '+prefix+'order Fall-1901 Army Par -> Pic, Fleet Eng -> Iri, etc..\nplease send orders from your designated country channel.',
 	execute(message, args, client) {
+		//if the message came from a dm, exit out of the command without warning.
+		if (message.channel.type === 'dm') {
+			return;
+		}
 		const fs = require('fs')
 		fs.readFile('./json/country_id.json', 'utf8', (err, jsonString) => {
 		    if (err) {
@@ -36,9 +40,13 @@ module.exports = {
 				    }
 				    const current_time = JSON.parse(jsonAString)
 				    var string_order = ""
-				    if (args[0] == current_time.current_time){
+				    var args_time = args[0]
+				    args_time = args_time.toLowerCase();
+				    var current_time_lowercase = current_time.current_time;
+				    current_time_lowercase = current_time_lowercase.toLowerCase();
+				    if (args_time == current_time_lowercase){
 				    	//send the order'
-				    	var message_time = args[0]
+				    	var message_time = current_time.current_time;
 				   		message_time = message_time.split('_').join(' of ')
 				    	var array_order = args;
 				    	array_order.splice(0, 1);
@@ -94,7 +102,7 @@ module.exports = {
 						})
 				    } else {
 				    	message.reply("The order must have the first argument as the current time."
-				    	+ "\nan example would be: *** order Fall_1901 germany sends nudes ***" +
+				    	+ "\nan example would be: *** order Fall-1901 germany sends nudes ***" +
 				    	"\nThe current time is : ***" + current_time.current_time + "***")
 				    }
 				})
@@ -120,7 +128,7 @@ module.exports = {
 				    				submission_check[k].italy == "true" && 
 					   				submission_check[k].russia == "true" && 
 					   				submission_check[k].turkey == "true" ){
-				    				all_submitted == true;
+				    				all_submitted = true;
 				    				console.log("All submitted, send a message to notifications")
 				    				break;
 						  		}
