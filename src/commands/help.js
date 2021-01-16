@@ -1,11 +1,10 @@
-const fs = require('fs');
 let rawdata = fs.readFileSync('./json/config.json');
 let config = JSON.parse(rawdata);
 const prefix = config.prefix;
 module.exports = {
 	name: 'help',
 	description: 'List all of my commands or info about a specific command.',
-	aliases: ['commands'],
+	aliases: ['commands', 'h'],
 	usage: '[command name]',
 	cooldown: 5,
 	execute(message, args) {
