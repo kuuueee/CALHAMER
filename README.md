@@ -5,6 +5,7 @@ This Discord Bot manages player interactions as well as submissions for the boar
 
 ### anon-message
 
+Aliases: message-anon, message_anon, anon_message\
 Description: Sends an anonymous message to the country of the user's choosing\
 Usage: !anon-message {country receiving message} {message}\
 Example: !anon-message france if you support england this round, germany and austria will make an alliance.
@@ -12,6 +13,7 @@ Example: !anon-message france if you support england this round, germany and aus
 
 ### country-message
 
+Aliases: message-country, message_country, country_message\
 Description: Sends message to the country of the users choosing notifying which country sent the message\
 Usage: !country-message {country receiving message} {message}\
 Example: !country-message france we will support your move into brussels if you give us passage through belgium
@@ -19,7 +21,7 @@ Example: !country-message france we will support your move into brussels if you 
 
 ### date
 
-Aliases: time current-time\
+Aliases: time, current-time\
 Description: returns the current date to the user\
 Usage: !date
 
@@ -31,6 +33,14 @@ Description: Sends the order to a log that the game master can see.\
 Usage: !order {current time} {order that you want to submit}\
 Example: !order Fall-1901 Army Par -> Pic, Fleet Eng -> Iri, etc..\
 please send orders from your designated country channel.
+
+## beak
+
+Aliases: trash-talk, insult, shit-talk\
+Description: Sends an anonymous message to the trash-talk channel.\
+Usage: !beak {your message}.\
+Example: !beak Germany's fleet in Denmark trying to support a move into Norway was laughable.
+
 
 ## ADMIN COMMANDS
 
