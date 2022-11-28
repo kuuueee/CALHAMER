@@ -1,5 +1,5 @@
 # CALHAMER
-This Discord Bot manages player interactions as well as submissions for the board game Diplomacy devolped by Avalon Hill.
+This Discord Bot manages player interactions as well as submissions for the board game Diplomacy developed by Avalon Hill.
 
 ## USER COMMANDS
 
